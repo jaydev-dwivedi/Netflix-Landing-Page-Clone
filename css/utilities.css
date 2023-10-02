@@ -1,0 +1,39 @@
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inline-flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    /* background-color: azure; */
+    list-style: none;
+}
+
+.primary-bg-color {
+    background-color: black;
+}
+
+
+
+.title {
+    color: white;
+    font-size: 3rem;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.imageContainer {
+    position: absolute;
+    display: inline-block;
+}
