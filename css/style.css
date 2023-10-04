@@ -84,7 +84,7 @@ header::before {
     background-color: #2f2e2e5a;
 }
 
-.language-li svg {
+.language-li > svg {
     position: absolute;
     top: 0.3rem;
     left: 0.6rem;
@@ -234,17 +234,9 @@ input:is(:focus, :valid) + .placeholder {
     color: rgb(188, 181, 181);
 }
 
-/* input:is(:valid) {
+input:valid {
     border: 2px solid green;
-} */
-
-input:is(:invalid, :not([value=""])) {
-    border: 1px solid rgba(229, 9, 20, 0.555);
 }
-
-/* input:is([value=""]) + span {
-    display: inline-block;
-} */
 
 .getStarted {
     background-color: var(--netflix-logo-red);
@@ -463,7 +455,6 @@ input:is(:invalid, :not([value=""])) {
 }
 
 /* FAQ Section */
-
 #faqSection {
     display: flex;
     justify-content: center;
@@ -583,9 +574,50 @@ footer h4 {
 }
 
 /* Language drop down menu */
-#footerLang {
-    margin: 0px;
-    margin-top: 0.5rem;
+.language-li {
+    position: relative;
+    margin: 5px;
+    margin-right: 15px;
+    width: 8vw;
+    background-color: #2f2e2e5a;
+}
+
+.language-li > svg {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.6rem;
+    bottom: 0;
+    fill: white;
+    z-index: -1;
+}
+
+.language-li:after {
+    content: url('/Icons/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.png');
+    position: absolute;
+    top: 0.2rem;
+    bottom: 0;
+    right: 0;
+    filter:invert(100%);
+    fill: white;
+    /* border: 2px solid red; */
+    z-index: -1;
+}
+
+/* Navbar language-button */
+.lang {
+    font-size: 1rem;
+    padding-right: 1.20rem;
+    line-height: 1.25rem;
+    padding-left: 2rem;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    border-radius: 3px;
+    /* background-color: #191919c8; */
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 /* Copyright - Netflix India */
