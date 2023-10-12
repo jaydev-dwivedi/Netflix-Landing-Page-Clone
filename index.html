@@ -6,11 +6,678 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix India (Clone) - Watch TV Shows Online, Watch Movies Online</title>
     <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/jaydevdwd/oibsip_task-1/master/Images/favicon.ico">
-<!--     <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-<!--     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-<!--     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap"> -->
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/jaydevdwd/oibsip_task-1/master/css/style.css">
-    <link rel="stylesheet" href="https://raw.githubusercontent.com/jaydevdwd/oibsip_task-1/master/css/utilities.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap">
+<!--     <link rel="stylesheet" href="https://raw.githubusercontent.com/jaydevdwd/oibsip_task-1/master/css/style.css"> -->
+<!--     <link rel="stylesheet" href="https://raw.githubusercontent.com/jaydevdwd/oibsip_task-1/master/css/utilities.css"> -->
+    <style>
+        * {
+    margin: 0px;
+    padding: 0px;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+}
+
+:root {
+    --padding: 16px;
+    --focus-color: white;
+}
+a:hover {
+    cursor: pointer;
+}
+body > * {
+    color: white;
+}
+:root {
+    --netflix-logo-red: rgb(229, 9, 20);
+}
+
+body {
+    background-color: #202020 !important;
+}
+
+header::before {
+    display: inline-block;
+    height: 92vh;
+    width: 100%;
+    background: url('../bgimage.jpg') no-repeat center center/cover;
+    content: "testing";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(35%);
+    /* opacity; */
+}
+        
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inline-flex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    /* background-color: azure; */
+    list-style: none;
+}
+
+.primary-bg-color {
+    background-color: black;
+}
+
+.title {
+    color: white;
+    font-size: 3rem;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-top: 15px;
+}
+
+.imageContainer {
+    position: absolute;
+    display: inline-block;
+}
+/* navbar */
+#navbar {
+    display: inline-flex;
+    height: 90px;
+    margin: 0px;
+}
+
+/* Navbar Logo */
+#logo {
+    /* background-color: aqua; */
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 66vw;
+    padding-left: 101px;
+    margin-bottom: 2px;
+}
+
+/* logo */
+#logo li svg {
+    width: 9.25rem;
+    height: 2.5rem;
+    color: var(--netflix-logo-red);
+    fill: currentColor;
+    display: inline-block;
+    margin-left: 73px;
+    /* margin-right: 20px; */
+}
+
+/* Navbar sign in button and language selector container */
+#langSignIn {
+    /* background-color: orange; */
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 16vw;
+    margin-bottom: 2px;
+}
+
+/* Language li */
+.language-li {
+    position: relative;
+    margin: 5px;
+    margin-right: 15px;
+    width: 8vw;
+    background-color: #2f2e2e5a;
+}
+
+.language-li > svg {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.6rem;
+    bottom: 0;
+    fill: white;
+    z-index: -1;
+}
+
+.language-li:after {
+    content: url('/Icons/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.png');
+    position: absolute;
+    top: 0.2rem;
+    bottom: 0;
+    right: 0;
+    filter:invert(100%);
+    fill: white;
+    /* border: 2px solid red; */
+    z-index: -1;
+}
+
+/* Navbar language-button */
+.lang {
+    font-size: 1rem;
+    padding-right: 1.20rem;
+    line-height: 1.25rem;
+    padding-left: 2rem;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    border-radius: 3px;
+    /* background-color: #191919c8; */
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Navbar Sign In Button */
+#signInBtn {
+    align-self: flex-end;
+    margin: 10px;
+    padding: 8px 12px;
+    /* padding-left: 7px; */
+    width: 73px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: var(--netflix-logo-red);
+    margin-right: 6px;
+    margin-top: 8px;
+    /* margin-left: 30px; */
+}
+
+#signInBtn:hover {
+    cursor: pointer;
+}
+
+/* sign Up section */
+#signup {
+    /* background-color: rgba(255, 166, 0, 0.244); */
+    flex-direction: column;
+    height: 75vh;
+    color: white;
+    /* width: 100vw; */
+}
+
+/* heading */
+#tagLine {
+    /* background-color: #20202066; */
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+/* Section-1 sub-heading */
+#subTitle {
+    font-size: 1.5rem;
+    margin: 1rem;
+    /* margin-top: 25px; */
+}
+
+form {
+    /* background-color: rgba(0, 255, 255, 0.497); */
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* height: 20vh; */
+}
+
+.input-wrapper:after {
+    content: "Email address required";
+    color: red;
+    position: absolute;
+    top:5rem;
+    left: 2rem;
+    display: none;
+}
+
+/* user input form */
+.Sentence {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.875rem;
+    margin-bottom: 10px;
+}
+
+/* input wrapper - animation */
+.input-wrapper {
+    /* background-color: gray; */
+    padding: var(--padding);
+    color: var(--focus-color);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 90%;
+    /* box-sizing: border-box; */
+}
+
+.input-wrapper input {
+    /* outline: none; */
+    /* asset-color: #20202066; */
+    background-color: #20202066;
+    border: 1px solid gray;
+    border-radius: 4px;
+    color: white;
+    width: 70%;
+    height: 45%;
+    padding: var(--padding) 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.placeholder {
+    position: absolute;
+    background: none;
+    color: rgb(188, 181, 181);
+    left: 32px;
+    padding: 0 4px;
+    transition: all 0.3s ease;
+}
+
+input:is(:focus, :valid) + .placeholder {
+    transform: translatey(calc(-1 * var(--padding) + 2px));
+    font-size: 12px;
+    color: rgb(188, 181, 181);
+}
+
+input:valid {
+    border: 2px solid green;
+}
+
+.getStarted {
+    background-color: var(--netflix-logo-red);
+    color: rgba(255, 255, 255, 0.766);
+    padding: 15px 13px;
+    border: none;
+    width: 40%;
+    height: 100%;
+    margin-left: 8px;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    line-height: 100%;
+}
+
+.getStarted svg {
+    /* height: 1.5rem; */
+    position: relative;
+    top: 0.2rem;
+    right: 0.5rem;
+}
+
+/* Section - Enjoy on Your tv */
+#tv {
+    margin-top: 47px;
+    height: 75vh;
+    /* width: 100vw; */
+}
+
+#tvTextContainer {
+    /* background-color: rgba(250, 235, 215, 0.871); */
+    box-sizing: border-box;
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 48vw;
+    height: 100%;
+    padding: 0rem 0rem 0rem 11rem;
+}
+
+#tvImageContainer {
+    /* background-color: aquamarine; */
+    /* border: 5px solid red; */
+    position: absolute;
+    display: inline-block;
+    margin-top: 50px;
+    margin-right: 200px;
+    margin-left: 5px;
+    width: 38vw;
+    z-index: 0;
+}
+
+#tvVideo {
+    position: absolute;
+    top: 91px;
+    left: 85px;
+    z-index: 0;
+    aspect-ratio: 4/3;
+}
+
+#tvImageContainer img {
+    position: relative;
+    z-index: 1;
+}
+
+/* Section - Watch on phone */
+#phoneSection {
+    margin-top: 9px;
+    height: 76vh;
+}
+
+#phoneImageContainer {
+    /* background-color: antiquewhite; */
+    width: 40vw;
+    height: 100%;
+    align-items: right;
+    justify-content: center;
+    margin-right: -20px;
+}
+
+#phoneTextContainer {
+    /* background-color: aquamarine; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 40vw;
+    height: 90%;
+    padding-left: 4px;
+    margin-bottom: 35px;
+}
+
+#phoneMainImage {
+    /* border: 1px solid white; */
+    aspect-ratio: 4/3;
+    width: 94%;
+    /* height: 100%; */
+    /* z-index: 1; */
+}
+
+#phoneSubImageDiv {
+    background-color: black;
+    border: 2px solid rgba(188, 181, 181, 0.473);
+    flex-direction: column;
+    position: absolute;
+    margin-top: 275px;
+    width: 20vw;
+    height: 13vh;
+    border-radius: 12px;
+}
+
+#phoneSubImg {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    height: 5rem;
+
+}
+
+#phoneSubImageDiv span {
+    margin-left: 85px;
+}
+
+#strangerThingsSpan {
+    /* background-color: rgba(188, 181, 181, 0.645); */
+    position: relative;
+    top: 27px;
+}
+
+#downloadingSpan {
+    color: dodgerblue;
+    /* color:royalblue; */
+    /* color:steelblue; */
+    position: absolute;
+    top: 47px;
+}
+
+#downloadGIF {
+    float: right;
+    height: 3rem;
+    margin-right: 15px;
+    margin-top: 2px;
+}
+
+#phoneTextContainer p {
+    width: 80%;
+}
+
+/* Watch Everywhere Section */
+#allDevicesSection {
+    /* background-color:rgba(240, 248, 255, 0.497); */
+    margin-top: 9px;
+    height: 76vh;
+}
+
+#devicesTextContainer {
+    /* background-color: rgba(250, 235, 215, 0.558); */
+    flex-direction: column;
+    width: 40vw;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#devicesImageContainer {
+    position: relative;
+    width: 42vw;
+    height: 100%;
+    margin-left: -10px;
+    z-index: 0;
+}
+
+#devicesMainImage {
+    /* aspect-ratio: 4/3; */
+    width: 90%;
+    position: relative;
+    z-index: 1;
+}
+
+#devicesImageContainer video {
+    /* aspect-ratio: 8/3; */
+    position: absolute;
+    z-index: 0;
+    top: 120px;
+    height: 37%;
+    left: 142px;
+    width: 56%;
+}
+
+#devicesTextContainer p,
+#devicesTextContainer h1 {
+    width: 90%;
+}
+
+/* Children Section */
+#childrenSection {
+    /* background-color: aliceblue; */
+    margin-top: 9px;
+    height: 76vh;
+}
+
+#childrenImageContainer {
+    /* background-color: rgba(165, 42, 42, 0.499); */
+    height: 100%;
+    width: 39vw;
+    /* margin-left: 100px; */
+}
+
+#childrenImageContainer img {
+    width: 94%;
+    margin-left: 10px;
+    /* height: 90%; */
+}
+
+#childrenTextContainer {
+    margin-top: -35px;
+    width: 47vw;
+}
+
+/* FAQ Section */
+#faqSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 9px;
+    /* height: 10vh; */
+    padding: 65px 0px;
+    /* padding-bottom: 65px; */
+}
+
+#faqs {
+    /* background-color: rgba(0, 0, 255, 0.503); */
+    flex-direction: column;
+    width: 76.5vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.faq {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 4px;
+}
+
+.ques, .ans {
+    background-color: #2d2d2d;
+}
+
+.ques {
+    padding: 1.5rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.ques:hover {
+    background-color: #414141;
+    cursor: pointer;
+}
+
+.ques h3 {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.ques svg {
+    float: right;
+}
+
+.ans {
+    font-size: 1.5rem;
+    font-weight: 500;
+    max-height: 0px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 2px;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.ans p {
+    padding: 1.5rem;
+}
+
+.faq.active svg {
+    transform: rotate(45deg);
+}
+
+.faq.active .ans {
+    max-height: 300px;
+    /* transition: height 0.3s ease-in-out; */
+}
+
+/* footer */
+footer {
+    /* display: flex; */
+    margin-top: 9px;
+    padding: 4rem 11rem;
+    /* padding: 20px; */
+}
+
+#footerCall a {
+    color: rgba(203, 197, 197, 0.8);
+}
+#footerCall a:hover {
+    cursor: pointer;
+}
+#footerLinks {
+    /* background-color: rgba(127, 255, 212, 0.645); */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction: ; */
+    height: 28vh;
+    width: 57vw;
+}
+
+footer h4 {
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+.links {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    height: 71%;
+}
+
+.links span a {
+    color: rgba(203, 197, 197, 0.8);
+    font-size: 0.9rem;
+    /* line-height: 3rem; */
+    /* text-decoration: none; */
+}
+
+/* Language drop down menu */
+.language-li {
+    position: relative;
+    margin: 5px;
+    margin-right: 15px;
+    width: 8vw;
+    background-color: #2f2e2e5a;
+}
+
+.language-li > svg {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.6rem;
+    bottom: 0;
+    fill: white;
+    z-index: -1;
+}
+
+.language-li:after {
+    content: url('/Icons/arrow_drop_down_FILL0_wght400_GRAD0_opsz24.png');
+    position: absolute;
+    top: 0.2rem;
+    bottom: 0;
+    right: 0;
+    filter:invert(100%);
+    fill: white;
+    /* border: 2px solid red; */
+    z-index: -1;
+}
+
+/* Navbar language-button */
+.lang {
+    font-size: 1rem;
+    padding-right: 1.20rem;
+    line-height: 1.25rem;
+    padding-left: 2rem;
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+    border-radius: 3px;
+    /* background-color: #191919c8; */
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+/* Copyright - Netflix India */
+#copyright {
+    display: inline-block;
+    margin-top: 1.6rem;
+    font-weight:100;
+}
+    </style>
 </head>
 
 <body>
