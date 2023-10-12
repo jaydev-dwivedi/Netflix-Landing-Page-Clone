@@ -927,25 +927,25 @@ footer h4 {
                 href="http://contacts.google.com">000-800-919-1694</a></h4>
         <div id="footerLinks">
             <div class="links flex-center">
-                <span><a href="https://">FAQ</a></span>
-                <span><a href="https://">Media Centre</a></span>
-                <span><a href="https://">Ways to Watch</a></span>
-                <span><a href="https://">Cookie Preferences</a></span>
-                <span><a href="https://">Speed Test</a></span>
+                <span><a href="https://#">FAQ</a></span>
+                <span><a href="https://#">Media Centre</a></span>
+                <span><a href="https://#">Ways to Watch</a></span>
+                <span><a href="https://#">Cookie Preferences</a></span>
+                <span><a href="https://#">Speed Test</a></span>
             </div>
             <div class="links flex-center">
-                <span><a href="https://">Help Centre</a></span>
-                <span><a href="https://">Investor Relations</a></span>
-                <span><a href="https://">Terms of Use</a></span>
-                <span><a href="https://">Corporate Information</a></span>
-                <span><a href="https://">Legal Notices</a></span>
+                <span><a href="https://#">Help Centre</a></span>
+                <span><a href="https://#">Investor Relations</a></span>
+                <span><a href="https://#">Terms of Use</a></span>
+                <span><a href="https://#">Corporate Information</a></span>
+                <span><a href="https://#">Legal Notices</a></span>
             </div>
             <div class="links flex-center">
-                <span><a href="https://">Account</a></span>
-                <span><a href="https://">Jobs</a></span>
-                <span><a href="https://">Privacy</a></span>
-                <span><a href="https://">Contact Us</a></span>
-                <span><a href="https://">Only on Netflix</a></span>
+                <span><a href="https://#">Account</a></span>
+                <span><a href="https://#">Jobs</a></span>
+                <span><a href="https://#">Privacy</a></span>
+                <span><a href="https://#">Contact Us</a></span>
+                <span><a href="https://#">Only on Netflix</a></span>
             </div>
         </div>
         <ul>
@@ -962,7 +962,25 @@ footer h4 {
         </ul>
         <span id="copyright">Netflix India</span>
     </footer>
-    <script src="https://raw.githubusercontent.com/jaydevdwd/oibsip_task-1/master/js/script.js"></script>
+    <script>
+        const faqs = document.querySelectorAll('.faq');
+
+faqs.forEach((faq) => {
+    faq.addEventListener("click", () => {
+        if (faq.classList.contains("active")) {
+            faq.classList.remove("active");
+        }
+        else {
+            faq.classList.add("active");
+            faqs.forEach((otherFaq) => {
+                if (otherFaq != faq) {
+                    otherFaq.classList.remove("active");
+                }
+            })
+        }
+    })
+})
+    </script>
 </body>
 
 </html>
